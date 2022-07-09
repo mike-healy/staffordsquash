@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" data-trace="sidebar.php > aside" class="bg-neutral-400">
+<aside id="secondary" data-trace="sidebar.php > aside" class="bg-blue-500 p-8 lg:p-12">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </aside><!-- #secondary -->

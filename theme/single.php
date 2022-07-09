@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary">
+	<main id="primary" data-trace="single.php" class="col-span-3 p-8 lg:p-12 border-2 border-blue-300 border-solid">
 
 		<?php
 		while ( have_posts() ) :
@@ -32,4 +32,10 @@ get_header();
 
 <?php
 get_sidebar();
+?>
+
+</div> <!-- /end grid wrapper -->
+<?php
+
 get_footer();
+?>

@@ -32,8 +32,9 @@
 			]
 		},
 		"layout": {
-			"contentSize": "40rem",
-			"wideSize": "60rem"
+			"__grr": "Could you not?. How do I get my theme to ignore this shit. I want to control my own layout.",
+			"contentSize": "50rem",
+			"wideSize": "70rem"
 		}
 	}
 }
