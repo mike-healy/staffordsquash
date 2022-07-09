@@ -150,10 +150,6 @@ add_action( 'widgets_init', 'stsq_widgets_init' );
 function stsq_scripts() {
 	wp_enqueue_style( 'staffordsquash-style', get_stylesheet_uri(), array(), STSQ_VERSION );
 	wp_enqueue_script( 'staffordsquash-script', get_template_directory_uri() . '/js/script.min.js', array(), STSQ_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'stsq_scripts' );
 
