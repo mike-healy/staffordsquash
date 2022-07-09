@@ -26,6 +26,17 @@ module.exports = {
 			neutral: colors.neutral,
 
 			green: colors.green,
+			blue: {
+				100: '#cde4ff',
+				200: '#80bafe',
+				300: '#6088f0',
+				400: '#3763d3',
+				500: '#3232ca',
+				600: '#2424a1',
+				700: '#181879',
+				800: '#0e0e56',
+				900: '#070736'
+			},
 		},
 
 		// Extend the default Tailwind theme.
