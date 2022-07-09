@@ -1,5 +1,4 @@
 # Stafford Squash
-==================
 
 A custom theme based on \_tw
 
@@ -9,14 +8,17 @@ A custom theme based on \_tw
 2. Run `npm install && npm run dev` in this folder
 3. Activate this theme in WordPress
 
-Looking for live reloading? Learn how to [add Browsersync to your project](https://underscoretw.com/docs/getting-started/#h-using-browsersync).
-
 ## Development
 
 4. Run `npm run watch`
 5. Add [Tailwind utility classes](https://tailwindcss.com/docs/utility-first) with abandon
 
 See the complete [development documentation](https://underscoretw.com/docs/tailwind-plugins-npm-commands/) for more details.
+
+### Browsersync
+To enable HMR run both the watcher (to build new assets on change) and the browsersync server (same time using two terminals).
+- `npm run watch:frontend` (or other watcher as necessary)
+- `npm run watch:browser-sync`
 
 ## Deployment
 
