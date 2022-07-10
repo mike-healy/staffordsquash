@@ -8,7 +8,11 @@
  */
 
 get_header();
+
+// Open our main / sidebar wrapper to allow grid.
+// each page/single/front etc. template will need to close it after sidebar, before the footer.
 ?>
+<div class="main-grid-wrapper" data-trace="parts/layout/header-content">
 
 	<main id="primary" data-trace="single.php" class="col-span-3 p-8 lg:p-12 border-2 border-blue-300 border-solid">
 
@@ -18,24 +22,17 @@ get_header();
 
 			get_template_part( 'template-parts/content/content', get_post_type() );
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span>' . esc_html__( 'Previous:', 'staffordsquash' ) . '</span> <span>%title</span>',
-					'next_text' => '<span>' . esc_html__( 'Next:', 'staffordsquash' ) . '</span> <span>%title</span>',
-				)
-			);
+			the_post_navigation([
+				'prev_text' => '<span>' . esc_html__( 'Previous:', 'staffordsquash' ) . '</span> <span>%title</span>',
+				'next_text' => '<span>' . esc_html__( 'Next:', 'staffordsquash' ) . '</span> <span>%title</span>',
+			]);
 
 		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->
 
-<?php
-get_sidebar();
-?>
+	<?php get_sidebar(); ?>
+</div>
 
-</div> <!-- /end grid wrapper -->
-<?php
-
-get_footer();
-?>
+<?php get_footer(); ?>

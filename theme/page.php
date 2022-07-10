@@ -14,20 +14,20 @@
 
 get_header();
 ?>
+<div class="main-grid-wrapper">
+		<main id="primary" class="col-span-3 bg-green-300 p-8" data-trace="page.php > main">
 
-	<main id="primary" class="bg-green-300" data-trace="page > main">
+			<?php
+			while ( have_posts() ) :
+				the_post();
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+				get_template_part( 'template-parts/content/content', 'page' );
 
-			get_template_part( 'template-parts/content/content', 'page' );
+			endwhile; // End of the loop.
+			?>
 
-		endwhile; // End of the loop.
-		?>
+		</main><!-- #main -->
 
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+	<?php get_sidebar(); ?>
+</div>
+<?php get_footer(); ?>

@@ -43,8 +43,3 @@
 	</nav><!-- #site-navigation -->
 </header><!-- #masthead -->
 
-<?php
-// Open our main / sidebar wrapper to allow grid.
-// each page/single/front etc. template will need to close it after sidebar, before the footer.
-?>
-<div class="grid grid-cols-4 gap-4 lg:gap-8 border bg-blue-700 dark:bg-blue-800 text-white border-white border-solid" data-trace="parts/layout/header-content">

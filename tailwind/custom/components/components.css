@@ -57,6 +57,10 @@ $post-content-selector {
 	@apply max-w-none;
 }
 
+.main-grid-wrapper {
+	@apply grid grid-cols-4 gap-4 lg:gap-8 border bg-blue-700 dark:bg-blue-800 text-white border-white border-solid;
+}
+
 .screen-reader-text {
 	clip: rect(1px,1px,1px,1px);
     position: absolute !important;
