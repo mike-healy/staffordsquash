@@ -148,10 +148,40 @@ add_action( 'widgets_init', 'stsq_widgets_init' );
  * Enqueue scripts and styles.
  */
 function stsq_scripts() {
-	wp_enqueue_style( 'staffordsquash-style', get_stylesheet_uri(), array(), STSQ_VERSION );
-	wp_enqueue_script( 'staffordsquash-script', get_template_directory_uri() . '/js/script.min.js', array(), STSQ_VERSION, true );
+	wp_enqueue_style( 'staffordsquash-style', get_stylesheet_uri(), [], STSQ_VERSION );
+	wp_enqueue_script( 'staffordsquash-script', get_template_directory_uri() . '/js/script.min.js', [], STSQ_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'stsq_scripts' );
+
+/**
+ * Inline head scripts for priority, fast things. 
+ */
+function stsq_inline_head_scripts()
+{
+// Restore color theme preference (add switcher UI later)
+// This theme defaults to dark. If user explicitely selects .light (in localStorage) we just skip adding the .dark class
+echo <<<EOD
+	<script>
+	const colorTheme = () => {
+		const doc = document.querySelector(':root');
+		const default = 'dark';
+
+		if (!localStorage in window)  {
+			doc.classList.add(default);
+			return;
+		}
+		
+		let pref = localStorage.getItem('color-theme');
+		if (pref !== 'light') {
+			doc.classList.add(default);
+		}
+	};
+	colorTheme();
+	</script>
+EOD;
+
+}
+add_action('wp_head', 'stsq_inline_head_scripts', 8);
 
 /**
  * Add the block editor class to TinyMCE.
